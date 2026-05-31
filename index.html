@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+    <meta name="description" content="" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo" id="nav-logo">...</a>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <a href="cv_de.pdf" class="nav-btn" target="_blank" download
+              >Download CV</a
+            >
+          </li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-bg"><div class="hero-grid"></div></div>
+      <div class="hero-content">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name" id="hero-name"></h1>
+        <div class="hero-title">
+          <span class="typed-text" id="typed-text"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-description">
+          <span id="hero-description"></span><br />
+          <span id="hero-location"></span>
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Get In Touch
+          </a>
+          <a href="#experience" class="btn btn-outline">
+            <i class="fas fa-briefcase"></i> View My Work
+          </a>
+        </div>
+        <div class="hero-social" id="hero-social"></div>
+      </div>
+      <div class="hero-scroll">
+        <a href="#about">
+          <span class="scroll-text">Scroll Down</span>
+          <i class="fas fa-chevron-down scroll-icon"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Who I Am</span>
+          <h2 class="section-title">About <span class="accent">Me</span></h2>
+        </div>
+        <div class="about-grid">
+          <!-- Photo -->
+          <div class="about-image-wrap fade-in">
+            <div class="about-image">
+              <img
+                src="vane_milevski.png"
+                alt="Vane Milevski"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="photo-placeholder" style="display: none">
+                <i class="fas fa-user"></i>
+              </div>
+              <div class="about-image-border"></div>
+            </div>
+            <div class="about-badge" id="available-badge">
+              <i
+                class="fas fa-circle"
+                style="color: #f59e0b; font-size: 0.6rem"
+              ></i>
+              <span>Not actively looking</span>
+            </div>
+          </div>
+
+          <!-- Bio -->
+          <div class="about-content fade-in">
+            <h3 class="about-subtitle">
+              A dedicated professional building great things
+            </h3>
+            <div id="about-bio"></div>
+
+            <div class="about-info">
+              <div class="info-item">
+                <span class="info-label"
+                  ><i class="fas fa-map-marker-alt"></i>Location</span
+                >
+                <span class="info-value" id="about-location"></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label"
+                  ><i class="fas fa-envelope"></i>Email</span
+                >
+                <span class="info-value">
+                  <a id="about-email" href="#"></a>
+                </span>
+              </div>
+              <div class="info-item">
+                <span class="info-label"
+                  ><i class="fas fa-phone"></i>Phone</span
+                >
+                <span class="info-value" id="about-phone"></span>
+              </div>
+              <div class="info-item">
+                <span class="info-label"
+                  ><i class="fas fa-language"></i>Languages</span
+                >
+                <span class="info-value" id="about-languages-info"></span>
+              </div>
+            </div>
+
+            <div class="about-stats" id="about-stats"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">My Journey</span>
+          <h2 class="section-title">
+            Work <span class="accent">Experience</span>
+          </h2>
+        </div>
+        <div class="timeline" id="timeline-container"></div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What I Know</span>
+          <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-category fade-in">
+            <div class="skill-cat-icon"><i class="fas fa-code"></i></div>
+            <h3 class="skill-cat-title">Technical Skills</h3>
+            <div class="skill-bars" id="technical-skills"></div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <div class="skill-cat-icon"><i class="fas fa-users"></i></div>
+            <h3 class="skill-cat-title">Soft Skills</h3>
+            <div class="skill-bars" id="soft-skills"></div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <div class="skill-cat-icon"><i class="fas fa-tools"></i></div>
+            <h3 class="skill-cat-title">Tools &amp; Technologies</h3>
+            <div class="skill-tags" id="tools-tags"></div>
+          </div>
+
+          <div class="skill-category fade-in">
+            <div class="skill-cat-icon"><i class="fas fa-globe"></i></div>
+            <h3 class="skill-cat-title">Languages</h3>
+            <div class="language-list" id="spoken-languages"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">My Background</span>
+          <h2 class="section-title">
+            Education &amp; <span class="accent">Certifications</span>
+          </h2>
+        </div>
+        <div class="education-grid" id="education-grid"></div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">My Work</span>
+          <h2 class="section-title">
+            Featured <span class="accent">Projects</span>
+          </h2>
+        </div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-info fade-in">
+            <p class="contact-intro">
+              I'm currently employed and not actively looking for a new
+              position. However, if you have an interesting project or simply
+              want to connect, feel free to reach out - I'm always happy to
+              have a conversation.
+            </p>
+            <div class="contact-details">
+              <a id="contact-email" href="#" class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <span class="contact-detail-label">Email</span>
+                  <span
+                    class="contact-detail-value"
+                    id="contact-email-value"
+                  ></span>
+                </div>
+              </a>
+              <a id="contact-phone" href="#" class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <span class="contact-detail-label">Phone</span>
+                  <span
+                    class="contact-detail-value"
+                    id="contact-phone-value"
+                  ></span>
+                </div>
+              </a>
+              <div class="contact-detail-item">
+                <div class="contact-detail-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <span class="contact-detail-label">Location</span>
+                  <span
+                    class="contact-detail-value"
+                    id="contact-location"
+                  ></span>
+                </div>
+              </div>
+            </div>
+            <div class="contact-social" id="contact-social"></div>
+          </div>
+
+          <form class="contact-form fade-in" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jane Doe"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jane@example.com"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Job Opportunity / Project / Say Hi"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Tell me about your project or opportunity..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-logo" id="footer-name"></p>
+          <p class="footer-tagline" id="footer-tagline"></p>
+          <nav class="footer-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="footer-year"></span> Vane Milevski. All rights reserved.</p>
+          <a href="#hero" class="back-to-top" title="Back to top">
+            <i class="fas fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Load your data first, then the script -->
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
