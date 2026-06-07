@@ -17,6 +17,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
   </head>
   <body>
     <!-- NAVIGATION -->
@@ -36,9 +42,14 @@
             >
           </li>
         </ul>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-          <span></span><span></span><span></span>
-        </button>
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark mode">
+            <i class="fas fa-sun" id="theme-icon"></i>
+          </button>
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
     </nav>
 
@@ -78,7 +89,7 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Who I Am</span>
+          <span class="section-tag">Who Am I</span>
           <h2 class="section-title">About <span class="accent">Me</span></h2>
         </div>
         <div class="about-grid">
@@ -235,8 +246,8 @@
             <p class="contact-intro">
               I'm currently employed and not actively looking for a new
               position. However, if you have an interesting project or simply
-              want to connect, feel free to reach out - I'm always happy to
-              have a conversation.
+              want to connect, feel free to reach out - I'm always happy to have
+              a conversation.
             </p>
             <div class="contact-details">
               <a id="contact-email" href="#" class="contact-detail-item">
@@ -347,7 +358,10 @@
           </nav>
         </div>
         <div class="footer-bottom">
-          <p>&copy; <span id="footer-year"></span> Vane Milevski. All rights reserved.</p>
+          <p>
+            &copy; <span id="footer-year"></span> Vane Milevski. All rights
+            reserved.
+          </p>
           <a href="#hero" class="back-to-top" title="Back to top">
             <i class="fas fa-arrow-up"></i>
           </a>

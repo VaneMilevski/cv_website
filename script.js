@@ -219,6 +219,26 @@ function buildProjectCard(proj) {
 
 
 // ==========================================
+// THEME TOGGLE
+// ==========================================
+const themeToggleBtn = document.getElementById('theme-toggle');
+const themeIconEl    = document.getElementById('theme-icon');
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeIconEl.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+}
+
+themeToggleBtn.addEventListener('click', () => {
+  const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+});
+
+applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
+
+
+// ==========================================
 // NAVBAR — scroll effect + active link
 // ==========================================
 const navbar      = document.getElementById('navbar');

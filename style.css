@@ -25,6 +25,25 @@
   --font-heading: 'Space Grotesk', sans-serif;
 }
 
+[data-theme="light"] {
+  --bg:          #fffbf0;
+  --bg-alt:      #fef3c7;
+  --card:        #ffffff;
+  --card-border: #fde68a;
+  --accent:      #dc2626;
+  --accent-dim:  rgba(220, 38, 38, 0.1);
+  --accent2:     #ca8a04;
+  --accent2-dim: rgba(202, 138, 4, 0.1);
+  --green:       #16a34a;
+  --text:        #1c0a0a;
+  --text-muted:  #57534e;
+  --text-dim:    #a8a29e;
+  --border:      #fcd34d;
+  --gradient:    linear-gradient(135deg, #dc2626, #ca8a04);
+  --shadow:      0 4px 24px rgba(220, 38, 38, 0.08);
+  --shadow-lg:   0 8px 48px rgba(220, 38, 38, 0.13);
+}
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
@@ -115,6 +134,9 @@ button     { cursor: pointer; border: none; background: none; font-family: inher
   padding: 0.85rem 0;
   box-shadow: 0 1px 0 var(--border);
 }
+[data-theme="light"] #navbar.scrolled {
+  background: rgba(255, 251, 240, 0.95);
+}
 
 .nav-container {
   max-width: 1100px;
@@ -173,6 +195,32 @@ button     { cursor: pointer; border: none; background: none; font-family: inher
 .nav-btn::after { display: none !important; }
 .nav-btn:hover { opacity: 0.85; transform: translateY(-1px); }
 
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: var(--accent-dim);
+  font-size: 1rem;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
 
 .hamburger {
   display: none;
@@ -1107,6 +1155,9 @@ button     { cursor: pointer; border: none; background: none; font-family: inher
   border-top: 1px solid var(--border);
   padding: 3rem 0 2rem;
 }
+[data-theme="light"] #footer {
+  background: #fef3c7;
+}
 
 .footer-content {
   text-align: center;
@@ -1197,6 +1248,9 @@ button     { cursor: pointer; border: none; background: none; font-family: inher
     transition: right var(--transition);
     border-left: 1px solid var(--border);
     z-index: 999;
+  }
+  [data-theme="light"] .nav-links {
+    background: rgba(255, 251, 240, 0.98);
   }
   .nav-links.open { right: 0; }
   .hamburger      { display: flex; }
